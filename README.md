@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Technical test Yield Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hello and thanks for taking the time to take this test !
 
-Currently, two official plugins are available:
+Please do not use ChatGpt, Github Copilot or any equivalent.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+The app shows a tree view of files and folder ; however it shows nothing for now.  
+Tree node are of `TreeNode` type
+```ts
+interface TreeNode {
+  name: string;
+  children?: TreeNode[];
+  hidden?: boolean;
+}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# Getting Stared
+1. Run `npm i` to install all dependencies.
+2. Run `npm run dev` to start dev server and mocked services.
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+# Step 1
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+In `lib.ts` and `lib.test.ts`, the test for the function `filterHiddenFiles` fails  
+You are asked to fix the function so the test succeeds.
+
+# Step 2
+For this step, please considerate `<TreeView>` as a component coming from a 3rd party library. It should not be edited.
+
+1. Build `useQueryTreeData` hook to fetch http://localhost:5173/tree. Its return type should match the provided `UseQueryTreeDataReturn`.  
+No worries, the endpoint is already handled via a mocked API service.   
+2. Use the query hook in `App.tsx` to inject the data into `<TreeView>` so the 1st test in `app.test.ts` succeeds ("renders the tree data correctly").
+3. Use `filterHiddenFiles` to only display files that are not "hidden". Hence, the 2nd test  in `app.test.ts` should succeed ("renders the tree with filtered data")'
+
+

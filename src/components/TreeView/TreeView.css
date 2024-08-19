@@ -1,0 +1,37 @@
+.tree-view ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.tree-view ul ul {
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.tree-node {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.tree-node:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden-node {
+    color: #aaa;
+    opacity: 0.6;
+}
+
+.tree-view {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
