@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { filterHiddenFiles } from "../lib.ts";
+import { filterHiddenFiles } from "../filterHiddenFiles.ts";
 import { TreeNode } from "../mocks/data.ts";
 
 describe("filterHiddenFiles", () => {

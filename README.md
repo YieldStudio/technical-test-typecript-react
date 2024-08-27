@@ -18,9 +18,13 @@ interface TreeNode {
 1. Run `npm i` to install all dependencies.
 2. Run `npm run dev` to start dev server and mocked services.
 
+# Run unit test
+Run `npm run test:filterHiddenFiles` run only `filterHiddenFiles.test.ts`.
+Run `npm run test:all` run all units tests in watch mode.
+
 # Step 1
 
-In `lib.ts` and `lib.test.ts`, the test for the function `filterHiddenFiles` fails  
+In `filterHiddenFiles.ts` and `filterHiddenFiles.test.ts`, the test for the function `filterHiddenFiles` fails  
 You are asked to fix the function so the test succeeds.
 
 # Step 2
